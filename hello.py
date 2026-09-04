@@ -3,20 +3,14 @@ print("Welcome here")
 print("My first post!")
 print("===================================")
 
-username = "cool_creator"
-bio = "Fun Blogger"
-followers = 100
+username = input("Username:")
+age = input("Age: ")
+category = input("Enter Content Category: ")
 
-followers += 50  # Increase followers by 50
-print("Day 1:", followers)
-
-followers +=20 #Increase followers by 20
-print("Day 2:", followers)
-
-followers -= 10  # Decrease followers by 10
-print("Day 3:", followers)
-
+print("\nInstagram Profile")
+print("===================================")
 print("Username:", username)
-print("Bio:", bio) 
-print("Followers:", followers)
+print("Age:", age) 
+print("Category:", category)
+#
 
