@@ -1,3 +1,4 @@
+#Auditor Function
 def auditor():
     #Initialize inventory to zero in the start
     inventory = 0
@@ -32,4 +33,5 @@ def auditor():
             print("WARNING:Inventory limit reached. Cannot add more stock.")
             break
 
+#Function call to start the auditor program
 auditor()
