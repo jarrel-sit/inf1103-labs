@@ -11,27 +11,27 @@ def auditor():
             print("Total Units Processed: ", inventory)
             print("Number of Failed/Rejected Entries: ", invalid)
             return False
-        #Handle invalid inputs
+        
+        #Handle invalid inputs + Enforce business rule (stock quantity cannot be negative)
+        elif user.isdigit() == False:
+            print("Invalid input. Please enter a valid non-negative number.")
+            invalid += 1
+            continue
+
+        #Accept stock values as integers
         else:
-            if user.isdigit() == False:
-                print("Invalid input. Please enter a valid number.")
-                invalid += 1
-                continue
-        #Enforce business rule (stock quantity cannot be negative)
-            elif int(user) < 0:
-                print("Invalid input. Please enter a non-negative number.")
-                invalid += 1
-                continue
-            #Accept stock values as integers
-            else:
-                inventory += int(user)
-                #Manage state (Running total of stock quantity)
-                print(f"Current inventory: {inventory}")
+            inventory += int(user)
+            #Manage state (Running total of stock quantity)
+            print(f"Current inventory: {inventory}")
+            
         #Trigger overstock alert (if the inventory exceeds 500 units)
         if inventory > 500:
-            #print("Current inventory: ", inventory)
+            print("Current inventory: ", inventory)
             print("WARNING:Inventory limit reached. Cannot add more stock.")
             break
+
+        
+        
 
 #Function call to start the auditor program
 auditor()
